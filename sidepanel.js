@@ -30,7 +30,7 @@ document.getElementById("helpChatButton").addEventListener("click", function() {
             <div class="chat-input-container">
                 <input type="text" id="chatInput" placeholder="Enter your message..." autocomplete="off">
                 <button id="sendBtn">SEND</button>
-                <button id="sendURL">SEND Link</button> <!-- Add this button to send the URL -->
+                <button id="sendURL">Send Link</button> <!-- Add this button to send the URL -->
             </div>
         </div>
     `;
@@ -132,15 +132,32 @@ document.getElementById("helpChatButton").addEventListener("click", function() {
     }
 
     // Send URL as a message when the URL button is clicked
-    sendURL.addEventListener('click', () => {
-        getCurrentTabUrl((currentUrl) => {
-            const userMessage = document.createElement('div');
-            userMessage.classList.add('message', 'user');
-            userMessage.textContent = currentUrl; // Set URL as message text
-            chatMessages.appendChild(userMessage);
+sendURL.addEventListener('click', () => {
+    getCurrentTabUrl((currentUrl) => {
+        const userMessage = document.createElement('div');
+        userMessage.classList.add('message', 'user');
+        userMessage.textContent = currentUrl; // Set URL as message text
+        chatMessages.appendChild(userMessage);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        const typingMessage = document.createElement('div');
+        typingMessage.classList.add('message', 'auto', 'typing'); // Add typing style
+        typingMessage.textContent = 'Typing...';
+        chatMessages.appendChild(typingMessage);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        setTimeout(() => {
+            // Create a bot response for the URL
+            chatMessages.removeChild(typingMessage);
+            const botResponse = document.createElement('div');
+            botResponse.classList.add('message', 'auto');
+            botResponse.textContent = 'Thank you for the link'; // Bot's response
+            chatMessages.appendChild(botResponse);
             chatMessages.scrollTop = chatMessages.scrollHeight;
-        });
+        }, 1500);
     });
+});
+
 
     // When the 'SEND' button is clicked, send the message.
     sendBtn.addEventListener('click', sendMessage);
