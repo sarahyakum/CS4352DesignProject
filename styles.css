@@ -6,6 +6,7 @@ body {
 
 .frame {
     display: none;
+    
 }
 
 /* Hides elements by default (to be toggled via JavaScript) */
@@ -18,14 +19,15 @@ body {
 }
 
 .chat-container {
-    width: 300px;
-    height: 500px;
+    width: 95%;
+    height: 910px;
     border: 2px solid #f4a261;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     background-color: #fefaf6;  /* Light beige */
     position: relative;
+    margin: 10px 0px 10px ;
 }
 
 .chat-header {
@@ -36,6 +38,7 @@ body {
     font-weight: bold;
     border-bottom: 1px solid #f4a261;
     position: relative;
+    font-size: 16px;
 }
 
 .chat-messages {
@@ -55,7 +58,6 @@ body {
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 15px;
-    max-width: 80%;
     word-wrap: break-word;
 }
 
@@ -87,23 +89,25 @@ body {
 }
 
 .chat-input-container input {
-    width: 100%;
+    width: 75%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 14px;
     outline: none;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .chat-input-container button {
+    width: 25%;
     padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
+    margin: 2px;
 }
 
 .chat-input-container button:hover {
