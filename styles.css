@@ -18,6 +18,89 @@ body {
     display: block; /* Show only the active frame */
 }
 
+.title {
+    font-size: 100px; /* Large font size for prominence */
+    color: black;
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-family: 'Arial', sans-serif; /* Modern font family */
+}
+
+/* Home Frame Styles */
+#frame1 {
+    height: 910px;
+    max-width: 800px; /* Maximum width for the frame */
+    margin: 20px auto; /* Center the frame with margin */
+    padding: 20px; /* Padding inside the frame */
+    background-color: #fefaf6;  /* Light beige */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Headings in the Home Frame */
+#frame1 h1 {
+    font-size: 24px; /* Font size for headings */
+    color: #333; /* Dark text for readability */
+    margin-bottom: 10px; /* Spacing below headings */
+    border-bottom: 2px solid #f4a261; /* Bottom border matching help chat color */
+    padding-bottom: 5px; /* Padding for better separation */
+}
+
+/* Paragraphs in the Home Frame */
+#frame1 p {
+    font-size: 16px; /* Font size for paragraphs */
+    color: #666; /* Slightly lighter text for paragraphs */
+    line-height: 1.5; /* Line height for better readability */
+    margin-bottom: 20px; /* Space below paragraphs */
+}
+
+/* Help Chat Button in the Home Frame */
+.OptionButton {
+    background-color: #f4a261; /* Soft pink color for a cute look */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* More rounded corners for a cute effect */
+    padding: 12px 24px; /* Increased padding for a larger button */
+    font-size: 18px; /* Slightly larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* Help Chat Button in the Home Frame */
+#helpChatButton {
+    background-color: #f4a261; /* Soft pink color for a cute look */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* More rounded corners for a cute effect */
+    padding: 12px 24px; /* Increased padding for a larger button */
+    font-size: 18px; /* Slightly larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* Button Hover Effect */
+#helpChatButton:hover {
+    background-color: #ce7127; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Button Active Effect */
+#helpChatButton:active {
+    transform: scale(0.95); /* Shrink button when clicked for effect */
+}
+
+.OptionButton:hover {
+    background-color: #ce7127; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Button Active Effect */
+.OptionButton:active {
+    transform: scale(0.95); /* Shrink button when clicked for effect */
+}
+
 .chat-container {
     width: 95%;
     height: 910px;
@@ -112,4 +195,23 @@ body {
 
 .chat-input-container button:hover {
     background-color: #0056b3;
+}
+
+/* Responsive Design for Home Frame */
+@media (max-width: 600px) {
+    #frame1 {
+        padding: 15px; /* Adjust padding on smaller screens */
+    }
+
+    #frame1 h1 {
+        font-size: 20px; /* Adjust heading size */
+    }
+
+    #frame1 p {
+        font-size: 14px; /* Adjust paragraph size */
+    }
+
+    #helpChatButton {
+        width: 100%; /* Full-width button on small screens */
+    }
 }
