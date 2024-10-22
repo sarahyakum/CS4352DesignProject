@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.frame {
+    display: none;
+}
+
+/* Hides elements by default (to be toggled via JavaScript) */
+.hidden {
+    display: none;                  /* Sets display to none */
+}
+.active {
+    display: block; /* Show only the active frame */
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-container {
+    width: 300px;
+    height: 500px;
+    border: 2px solid #f4a261;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fefaf6;  /* Light beige */
+    position: relative;
+}
+
+.chat-header {
+    background-color: #fefaf6;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #f4a261;
+    position: relative;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #fffaf0;
+    border-bottom: 1px solid #ccc;
+}
+
+.message {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    max-width: 80%;
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.message.user {
+    background-color: #f4a261;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.message.auto {
+    background-color: #e0e0e0;
+    color: black;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.chat-input-container {
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.chat-input-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.chat-input-container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.chat-input-container button:hover {
+    background-color: #0056b3;
+}
