@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.getElementById("helpChatButton").addEventListener("click", function() {
+document.getElementById("helpChatButton").addEventListener("click", function () {
     const chatContainer = document.getElementById('chatContainer');
 
     // Add HTML code inside the chatContainer
@@ -40,9 +40,9 @@ document.getElementById("helpChatButton").addEventListener("click", function() {
     const sendBtn = document.getElementById('sendBtn'); // Send button
     const sendURL = document.getElementById('sendURL'); // Send URL button
 
-    // Hardcoded responses based on URLs
+    // Hardcoded responses based on base URLs
     const responses = {
-        'https://www.walmart.com/': {
+        'walmart.com': {
             keywords: {
                 'hello': 'Hi! Welcome to Walmart assistance!',
                 'product': 'You can use the search bar at the top of the page to find products.',
@@ -51,7 +51,7 @@ document.getElementById("helpChatButton").addEventListener("click", function() {
                 'cart': 'You can view your cart by clicking on the cart icon in the top right corner.'
             }
         },
-        'https://www.amazon.com/': {
+        'amazon.com': {
             keywords: {
                 'hello': 'Hello! How can I assist you with Amazon today?',
                 'prime': 'With Prime, you get free shipping and access to Prime Video.',
@@ -60,7 +60,7 @@ document.getElementById("helpChatButton").addEventListener("click", function() {
                 'cart': 'You can view your cart by clicking on the cart icon in the top right of the screen.'
             }
         },
-        'https://www.target.com/': {
+        'target.com': {
             keywords: {
                 'hello': 'Hi there! Need help with Target?',
                 'store hours': 'Most Target stores are open from 8 AM to 10 PM.',
@@ -106,15 +106,20 @@ document.getElementById("helpChatButton").addEventListener("click", function() {
                     const autoMessage = document.createElement('div');
                     autoMessage.classList.add('message', 'auto');
 
-                    // Check for keyword responses based on the current URL
-                    const urlResponses = responses[currentUrl]?.keywords || {};
+                    // Check for keyword responses based on the base URL (ignoring the path)
                     let foundResponse = false;
-
-                    // Check for a keyword match
-                    for (const keyword in urlResponses) {
-                        if (userText.includes(keyword)) {
-                            autoMessage.textContent = urlResponses[keyword]; // Set response if keyword is found
-                            foundResponse = true;
+                    for (const baseUrl in responses) {
+                        if (currentUrl.includes(baseUrl)) {
+                            const urlResponses = responses[baseUrl]?.keywords || {};
+                            
+                            // Check if user input matches any keyword in the URL responses
+                            for (const keyword in urlResponses) {
+                                if (userText.includes(keyword)) {
+                                    autoMessage.textContent = urlResponses[keyword]; // Set response if keyword is found
+                                    foundResponse = true;
+                                    break;
+                                }
+                            }
                             break;
                         }
                     }
@@ -132,32 +137,31 @@ document.getElementById("helpChatButton").addEventListener("click", function() {
     }
 
     // Send URL as a message when the URL button is clicked
-sendURL.addEventListener('click', () => {
-    getCurrentTabUrl((currentUrl) => {
-        const userMessage = document.createElement('div');
-        userMessage.classList.add('message', 'user');
-        userMessage.textContent = currentUrl; // Set URL as message text
-        chatMessages.appendChild(userMessage);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-
-        const typingMessage = document.createElement('div');
-        typingMessage.classList.add('message', 'auto', 'typing'); // Add typing style
-        typingMessage.textContent = 'Typing...';
-        chatMessages.appendChild(typingMessage);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-
-        setTimeout(() => {
-            // Create a bot response for the URL
-            chatMessages.removeChild(typingMessage);
-            const botResponse = document.createElement('div');
-            botResponse.classList.add('message', 'auto');
-            botResponse.textContent = 'Thank you for the link'; // Bot's response
-            chatMessages.appendChild(botResponse);
+    sendURL.addEventListener('click', () => {
+        getCurrentTabUrl((currentUrl) => {
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user');
+            userMessage.textContent = currentUrl; // Set URL as message text
+            chatMessages.appendChild(userMessage);
             chatMessages.scrollTop = chatMessages.scrollHeight;
-        }, 1500);
-    });
-});
 
+            const typingMessage = document.createElement('div');
+            typingMessage.classList.add('message', 'auto', 'typing'); // Add typing style
+            typingMessage.textContent = 'Typing...';
+            chatMessages.appendChild(typingMessage);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            setTimeout(() => {
+                // Create a bot response for the URL
+                chatMessages.removeChild(typingMessage);
+                const botResponse = document.createElement('div');
+                botResponse.classList.add('message', 'auto');
+                botResponse.textContent = 'Thank you for the link'; // Bot's response
+                chatMessages.appendChild(botResponse);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1500);
+        });
+    });
 
     // When the 'SEND' button is clicked, send the message.
     sendBtn.addEventListener('click', sendMessage);
