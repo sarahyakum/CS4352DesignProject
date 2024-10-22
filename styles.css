@@ -103,14 +103,15 @@ body {
 
 .chat-container {
     width: 95%;
-    height: 910px;
+    height: 100vh;
     border: 2px solid #f4a261;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     background-color: #fefaf6;  /* Light beige */
     position: relative;
-    margin: 10px 0px 10px ;
+    margin: 20px auto ;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .chat-header {
@@ -122,6 +123,8 @@ body {
     border-bottom: 1px solid #f4a261;
     position: relative;
     font-size: 16px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .chat-messages {
@@ -169,6 +172,8 @@ body {
     border-top: 1px solid #ccc;
     display: flex;
     align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .chat-input-container input {
@@ -179,6 +184,7 @@ body {
     font-size: 14px;
     outline: none;
     margin-right: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .chat-input-container button {
@@ -191,6 +197,7 @@ body {
     font-size: 12px;
     cursor: pointer;
     margin: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.263);
 }
 
 .chat-input-container button:hover {
