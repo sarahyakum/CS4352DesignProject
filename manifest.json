@@ -3,10 +3,7 @@
   "name": "Golden Access",
   "version": "1.0",
   "description": "CS4352 Project",
-  "action": {
-    "default_title": "Open Sidebar",
-    "default_popup": "popup.html" 
-  },
+  
   "icons": {
     "48": "icons/icon.png"
   },

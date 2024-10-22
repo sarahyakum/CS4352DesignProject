@@ -29,7 +29,7 @@ document.getElementById("helpChatButton").addEventListener("click", function() {
             <div class="chat-messages" id="chatMessages"></div>
             <div class="chat-input-container">
                 <input type="text" id="chatInput" placeholder="Enter your message..." autocomplete="off">
-                <button id="sendBtn">SEND</button>
+                <button id="sendBtn">Send</button>
                 <button id="sendURL">Send Link</button> <!-- Add this button to send the URL -->
             </div>
         </div>
