@@ -20,70 +20,134 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById("helpChatButton").addEventListener("click", function() {
-
-
     const chatContainer = document.getElementById('chatContainer');
 
-    // Add some HTML code inside the chatContainer
+    // Add HTML code inside the chatContainer
     chatContainer.innerHTML = `
-    <div class="chat-container">
-      <div class="chat-header">
-        Help Chat 
-      </div>
-      <div class="chat-messages" id="chatMessages"></div>
-      <div class="chat-input-container">
-        <input type="text" id="chatInput" placeholder="Enter your message..." autocomplete="off">
-        <button id="sendBtn">SEND</button>
-      </div>
-    </div>
-  `;
+        <div class="chat-container">
+            <div class="chat-header">Help Chat</div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Enter your message..." autocomplete="off">
+                <button id="sendBtn">SEND</button>
+                <button id="sendURL">SEND Link</button> <!-- Add this button to send the URL -->
+            </div>
+        </div>
+    `;
 
-    const chatInput = document.getElementById('chatInput'); // This is the input box where the user will type their messages.
-    const chatMessages = document.getElementById('chatMessages'); // This is the area where messages (both from the user and the bot) will appear.
-    const sendBtn = document.getElementById('sendBtn'); // This is the button the user will click to send their message.
+    const chatInput = document.getElementById('chatInput'); // User input
+    const chatMessages = document.getElementById('chatMessages'); // Message area
+    const sendBtn = document.getElementById('sendBtn'); // Send button
+    const sendURL = document.getElementById('sendURL'); // Send URL button
+
+    // Hardcoded responses based on URLs
+    const responses = {
+        'https://www.walmart.com/': {
+            keywords: {
+                'hello': 'Hi! Welcome to Walmart assistance!',
+                'product': 'You can use the search bar at the top of the page to find products.',
+                'return policy': 'You can return items within 90 days of purchase.',
+                'help': 'Sure! What do you need help with?',
+                'cart': 'You can view your cart by clicking on the cart icon in the top right corner.'
+            }
+        },
+        'https://www.amazon.com/': {
+            keywords: {
+                'hello': 'Hello! How can I assist you with Amazon today?',
+                'prime': 'With Prime, you get free shipping and access to Prime Video.',
+                'track order': 'Go to Your Orders to track your package.',
+                'help': 'Sure! What do you need help with?',
+                'cart': 'You can view your cart by clicking on the cart icon in the top right of the screen.'
+            }
+        },
+        'https://www.target.com/': {
+            keywords: {
+                'hello': 'Hi there! Need help with Target?',
+                'store hours': 'Most Target stores are open from 8 AM to 10 PM.',
+                'online ordering': 'You can order online for pickup or delivery.',
+                'help': 'Sure! What do you need help with?',
+                'cart': 'You can view your cart by clicking on the cart icon in the top right of the main screen.'
+            }
+        }
+    };
+
+    // Function to get the current URL of the active tab
+    function getCurrentTabUrl(callback) {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            if (tabs.length > 0) {
+                callback(tabs[0].url);
+            }
+        });
+    }
 
     // Define a function to handle sending messages
     function sendMessage() {
-
-        // First, check if the input field is not empty (ignoring spaces).
         if (chatInput.value.trim() !== '') {
-
-            // Create a new message element for the user
             const userMessage = document.createElement('div');
-            userMessage.classList.add('message', 'user'); // Add the 'message' and 'user' styles to it.
-            userMessage.textContent = chatInput.value;  // Set the text to what the user typed.
-
-            // Add the user message to the chat area.
+            userMessage.classList.add('message', 'user');
+            userMessage.textContent = chatInput.value;
             chatMessages.appendChild(userMessage);
-
-            // Scroll to the bottom of the chat to see the latest message.
             chatMessages.scrollTop = chatMessages.scrollHeight;
-
-            // Clear the input field after sending the message.
             chatInput.value = '';
 
-            // Simulate an auto response after a short delay
-            setTimeout(() => {
-                // Create a new message element for the auto.
-                const autoMessage = document.createElement('div');
-                autoMessage.classList.add('message', 'auto'); // Add 'message' and 'auto' styles.
-                autoMessage.textContent = 'Hello! How can I help you?';  // The automatic response.
+            const typingMessage = document.createElement('div');
+            typingMessage.classList.add('message', 'auto', 'typing'); // Add typing style
+            typingMessage.textContent = 'Typing...';
+            chatMessages.appendChild(typingMessage);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
 
-                // Add the auto message to the chat area.
-                chatMessages.appendChild(autoMessage);
+            // Get the current URL of the active tab
+            getCurrentTabUrl((currentUrl) => {
+                // Simulate an auto response based on user input after a delay
+                setTimeout(() => {
+                    chatMessages.removeChild(typingMessage);
 
-                // Scroll to the bottom of the chat to see the automatic message.
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 1000);  //  waits 1 second (1000ms) before responding.
+                    const userText = userMessage.textContent.toLowerCase(); // Convert user input to lowercase
+                    const autoMessage = document.createElement('div');
+                    autoMessage.classList.add('message', 'auto');
+
+                    // Check for keyword responses based on the current URL
+                    const urlResponses = responses[currentUrl]?.keywords || {};
+                    let foundResponse = false;
+
+                    // Check for a keyword match
+                    for (const keyword in urlResponses) {
+                        if (userText.includes(keyword)) {
+                            autoMessage.textContent = urlResponses[keyword]; // Set response if keyword is found
+                            foundResponse = true;
+                            break;
+                        }
+                    }
+
+                    // Default response if no keyword matched
+                    if (!foundResponse) {
+                        autoMessage.textContent = 'I\'m sorry, I didn\'t understand that.'; // Default response
+                    }
+
+                    chatMessages.appendChild(autoMessage);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1500);
+            });
         }
     }
+
+    // Send URL as a message when the URL button is clicked
+    sendURL.addEventListener('click', () => {
+        getCurrentTabUrl((currentUrl) => {
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user');
+            userMessage.textContent = currentUrl; // Set URL as message text
+            chatMessages.appendChild(userMessage);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    });
 
     // When the 'SEND' button is clicked, send the message.
     sendBtn.addEventListener('click', sendMessage);
 
     // The user can press 'Enter' on their keyboard to send the message.
     chatInput.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') { // Check if the 'Enter' key was pressed.
+        if (event.key === 'Enter') {
             sendMessage();
         }
     });
