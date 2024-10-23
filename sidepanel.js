@@ -25,7 +25,8 @@ document.getElementById("helpChatButton").addEventListener("click", function () 
     // Add HTML code inside the chatContainer
     chatContainer.innerHTML = `
         <div class="chat-container">
-            <div class="chat-header">Help Chat</div>
+            <div class="chat-header">Help Chat</div> 
+            <button id="backButton"> Back</button>
             <div class="chat-messages" id="chatMessages"></div>
             <div class="chat-input-container">
                 <input type="text" id="chatInput" placeholder="Enter your message..." autocomplete="off">

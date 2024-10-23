@@ -204,6 +204,22 @@ body {
     background-color: #0056b3;
 }
 
+#backButton {
+    position: absolute;            /* Absolutely position it within the frame */
+    top: 10px;                     /* Distance from the top */
+    left: 10px;                    /* Distance from the left */
+    font-size: 16px;               /* Font size for the back text */
+    cursor: pointer;               /* Change cursor to pointer */
+    color: #000;                   /* Set the color of the text */
+    background-color: transparent; /* Make the background transparent */
+    border: none;                  /* Remove default border */
+    padding: 5px;                  /* Add some padding around the button */
+}
+
+#backButton:hover {
+    color: #ECB545;                /* Change color on hover */
+}
+
 /* Responsive Design for Home Frame */
 @media (max-width: 600px) {
     #frame1 {
