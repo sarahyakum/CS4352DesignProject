@@ -2,7 +2,6 @@ console.log('sidepanel.js');
 
 document.addEventListener('DOMContentLoaded', () => {
     const helpChatButton = document.getElementById('helpChatButton');
-    const backButton = document.getElementById('backButton');
     const frame1 = document.getElementById('frame1');
     const helpChatFrame = document.getElementById('helpChatFrame');
 
@@ -10,12 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     helpChatButton.addEventListener('click', () => {
         frame1.classList.remove('active'); // Hide main frame
         helpChatFrame.classList.add('active'); // Show help chat frame
-    });
-
-    // Show main frame when back button is clicked
-    backButton.addEventListener('click', () => {
-        helpChatFrame.classList.remove('active'); // Hide help chat frame
-        frame1.classList.add('active'); // Show main frame
     });
 });
 
@@ -40,6 +33,16 @@ document.getElementById("helpChatButton").addEventListener("click", function () 
     const chatMessages = document.getElementById('chatMessages'); // Message area
     const sendBtn = document.getElementById('sendBtn'); // Send button
     const sendURL = document.getElementById('sendURL'); // Send URL button
+    
+    //Back button functionality
+    const frame1 = document.getElementById('frame1');
+    const helpChatFrame = document.getElementById('helpChatFrame');
+
+    const backButton = document.getElementById('backButton');
+    backButton.addEventListener('click', () => {
+        helpChatFrame.classList.remove('active'); // Hide help chat frame
+        frame1.classList.add('active'); // Show main frame
+    });
 
     // Hardcoded responses based on base URLs
     const responses = {

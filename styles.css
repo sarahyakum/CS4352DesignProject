@@ -65,7 +65,9 @@ body {
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-
+    /*Center buttons*/
+    display: block;
+    margin: auto;
 }
 
 /* Container that holds the button */
@@ -94,6 +96,9 @@ body {
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+     /*Center buttons*/
+    display: block;
+    margin: auto;
 }
 
 /* Button Hover Effect */
