@@ -28,7 +28,7 @@ body {
 
 /* Home Frame Styles */
 #frame1 {
-    height: 910px;
+    height: 900px;
     max-width: 800px; /* Maximum width for the frame */
     margin: 20px auto; /* Center the frame with margin */
     padding: 20px; /* Padding inside the frame */
@@ -56,15 +56,31 @@ body {
 
 /* Help Chat Button in the Home Frame */
 .OptionButton {
-    background-color: #f4a261; /* Soft pink color for a cute look */
-    color: white; /* White text */
+    background-color: #f4a261;
+    color: white;
     border: none; /* Remove default border */
-    border-radius: 25px; /* More rounded corners for a cute effect */
+    border-radius: 25px;
     padding: 12px 24px; /* Increased padding for a larger button */
     font-size: 18px; /* Slightly larger font size */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+
+}
+
+/* Container that holds the button */
+.container {
+    position: relative; /* Sets container as the reference point for absolute positioning */
+    height: 200px;
+    border: 1px solid #ccc;
+}
+
+/* Button Styles */
+#centeredButton {
+    position: absolute; /* Enables absolute positioning */
+    top: 50%; /* Move the button down to the center vertically */
+    left: 50%; /* Move the button right to the center horizontally */
+    transform: translate(-50%, -50%); /* Shift back by half its width and height for perfect centering */
 }
 
 /* Help Chat Button in the Home Frame */
@@ -122,7 +138,7 @@ body {
     font-weight: bold;
     border-bottom: 1px solid #f4a261;
     position: relative;
-    font-size: 16px;
+    font-size: 25px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -145,6 +161,7 @@ body {
     margin-bottom: 10px;
     border-radius: 15px;
     word-wrap: break-word;
+    font-size: 18px;
 }
 
 .message.user {
@@ -220,21 +237,3 @@ body {
     color: #ECB545;                /* Change color on hover */
 }
 
-/* Responsive Design for Home Frame */
-@media (max-width: 600px) {
-    #frame1 {
-        padding: 15px; /* Adjust padding on smaller screens */
-    }
-
-    #frame1 h1 {
-        font-size: 20px; /* Adjust heading size */
-    }
-
-    #frame1 p {
-        font-size: 14px; /* Adjust paragraph size */
-    }
-
-    #helpChatButton {
-        width: 100%; /* Full-width button on small screens */
-    }
-}
