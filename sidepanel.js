@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
         frame1.classList.remove('active'); // Hide main frame
         helpChatFrame.classList.add('active'); // Show help chat frame
     });
+
+    // Show help chat frame when button is clicked
+    EditButton.addEventListener('click', () => {
+        frame1.classList.remove('active'); // Hide main frame
+        editingFrame.classList.add('active'); // Show help chat frame
+    });
 });
 
 document.getElementById("helpChatButton").addEventListener("click", function () {
@@ -177,3 +183,40 @@ document.getElementById("helpChatButton").addEventListener("click", function () 
         }
     });
 });
+
+document.getElementById("EditButton").addEventListener("click", function () {
+    const editContainer = document.getElementById('editContainer');
+
+    // Add HTML code inside the editContainer
+    editContainer.innerHTML = `
+        <div class="edit-container">
+            <button id="backButton"> Back</button>
+            <div>
+                <button id="getText">Get Selected Text</button>
+                <p id="output"></p>
+            
+            </div>
+            
+        
+        </div>
+    `;
+    
+    //Back button functionality
+    const frame1 = document.getElementById('frame1');
+    const editingFrame = document.getElementById('editingFrame');
+
+    const backButton = document.getElementById('backButton');
+    backButton.addEventListener('click', () => {
+        editingFrame.classList.remove('active'); // Hide help chat frame
+        frame1.classList.add('active'); // Show main frame
+    });
+
+    chrome.tabs.executeScript( {
+        code: "window.getSelection().toString();"
+      }, function(selection) {
+        alert(selection[0]);
+      });
+
+});
+
+

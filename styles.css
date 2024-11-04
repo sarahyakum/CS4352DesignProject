@@ -112,6 +112,33 @@ body {
     transform: scale(0.95); /* Shrink button when clicked for effect */
 }
 
+/* Edit Button in the Home Frame */
+#EditButton {
+    background-color: #f4a261; /* Soft pink color for a cute look */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* More rounded corners for a cute effect */
+    padding: 12px 24px; /* Increased padding for a larger button */
+    font-size: 18px; /* Slightly larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+     /*Center buttons*/
+    display: block;
+    margin: auto;
+}
+
+/* Button Hover Effect */
+#EditChatButton:hover {
+    background-color: #ce7127; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Button Active Effect */
+#EditChatButton:active {
+    transform: scale(0.95); /* Shrink button when clicked for effect */
+}
+
 .OptionButton:hover {
     background-color: #ce7127; /* Darker shade on hover */
     transform: scale(1.05); /* Slightly enlarge button on hover */
@@ -123,6 +150,18 @@ body {
 }
 
 .chat-container {
+    width: 95%;
+    height: 100vh;
+    border: 2px solid #f4a261;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fefaf6;  /* Light beige */
+    position: relative;
+    margin: 20px auto ;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.edit-container {
     width: 95%;
     height: 100vh;
     border: 2px solid #f4a261;
