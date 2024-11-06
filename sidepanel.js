@@ -48,27 +48,27 @@ document.getElementById("helpChatButton").addEventListener("click", function () 
     const responses = {
         'walmart.com': {
             keywords: {
-                'hello': 'Hi! Welcome to Walmart assistance!',
+                'hello': 'Hi! How can I assist you with Walmart?',
                 'product': 'You can use the search bar at the top of the page to find products.',
                 'return policy': 'You can return items within 90 days of purchase.',
                 'help': 'Sure! What do you need help with?',
                 'cart': 'You can view your cart by clicking on the cart icon in the top right corner.'
             }
         },
-        'amazon.com': {
+        'memorialhermann.org': {
             keywords: {
-                'hello': 'Hello! How can I assist you with Amazon today?',
+                'hello': 'Hello! How can I help you use Memorial Hermann today?',
                 'prime': 'With Prime, you get free shipping and access to Prime Video.',
                 'track order': 'Go to Your Orders to track your package.',
                 'help': 'Sure! What do you need help with?',
                 'cart': 'You can view your cart by clicking on the cart icon in the top right of the screen.'
             }
         },
-        'target.com': {
+        'txdmv.gov': {
             keywords: {
-                'hello': 'Hi there! Need help with Target?',
-                'store hours': 'Most Target stores are open from 8 AM to 10 PM.',
-                'online ordering': 'You can order online for pickup or delivery.',
+                'hello': 'Hi there! How can I help you navigate the Texas DMV website?',
+                'hours': 'Our business hours are Monday through Friday, 8AM - 5PM (Central Time). Due to the large number of calls we receive, you may experience longer than average hold times during certain hours. Our busiest times during the week are Mondays, Tuesdays, and daily 11AM to 2PM. Customers calling outside these times may experience shorter hold times.',
+                'call': 'Our Toll-Free number is 1 (888) 368-4689',
                 'help': 'Sure! What do you need help with?',
                 'cart': 'You can view your cart by clicking on the cart icon in the top right of the main screen.'
             }
