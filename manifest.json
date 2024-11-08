@@ -12,7 +12,14 @@
     "side_panel": {
         "default_path": "sidepanel.html"
     },
-    "permissions": ["sidePanel"],
+    "permissions": ["sidePanel", "scripting"],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+	"js": ["content.js"],
+	"css": ["styles.css"]
+      }
+    ],
     "background": {
       "service_worker": "service-worker.js"
     }
