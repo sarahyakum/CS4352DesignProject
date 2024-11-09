@@ -70,7 +70,7 @@ document.getElementById("helpChatButton").addEventListener("click", function () 
                 'hours': 'Their business hours are Monday through Friday, 8AM - 5PM (Central Time). Due to the large number of calls they receive, you may experience longer than average hold times during certain hours. The busiest times during the week are Mondays, Tuesdays, and daily 11AM to 2PM. Customers calling outside these times may experience shorter hold times.',
                 'call': 'The Toll-Free number is 1 (888) 368-4689',
                 'help': 'Sure! What do you need help with?',
-                'cart': 'You can view your cart by clicking on the cart icon in the top right of the main screen.'
+                'license': 'Here are the steps to renew your driver\'s license: \n\n1. Click on the "Driver License & IDs" tab at the top of the screen.\n\n2. Follow the instructions to renew your license online.'
             }
         }
     };
