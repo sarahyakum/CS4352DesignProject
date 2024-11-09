@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const helpChatButton = document.getElementById('helpChatButton');
     const frame1 = document.getElementById('frame1');
     const helpChatFrame = document.getElementById('helpChatFrame');
+    const editingFrame = document.getElementById('editingFrame');
+    const EditButton = document.getElementById('EditButton');
 
     // Show help chat frame when button is clicked
     helpChatButton.addEventListener('click', () => {
@@ -11,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         helpChatFrame.classList.add('active'); // Show help chat frame
     });
 
-    // Show help chat frame when button is clicked
+    // Show editing frame when button is clicked
     EditButton.addEventListener('click', () => {
         frame1.classList.remove('active'); // Hide main frame
         editingFrame.classList.add('active'); // Show help chat frame
@@ -191,7 +193,7 @@ document.getElementById("EditButton").addEventListener("click", function () {
     editContainer.innerHTML = `
         <div class="edit-container">
             <div class="edit-header">Edit Websites Text</div>
-            <button id="backButton"> Back</button> 
+            <button id="editBackButton"> Back</button> 
             <label for="fontType">Font Type:</label>
             <select id="fontType">
                 <option value="">Original Font</option>
@@ -247,15 +249,6 @@ document.getElementById("EditButton").addEventListener("click", function () {
         </script>
         `;
     
-    //Back button functionality
-    const frame1 = document.getElementById('frame1');
-    const editingFrame = document.getElementById('editingFrame');
-
-    const backButton = document.getElementById('backButton');
-    backButton.addEventListener('click', () => {
-        editingFrame.classList.remove('active'); // Hide help chat frame
-        frame1.classList.add('active'); // Show main frame
-    });
     //calls script to change fonts
     document.getElementById("applyBtn").addEventListener("click", () => {
         const fontType = document.getElementById("fontType").value;
@@ -276,6 +269,17 @@ document.getElementById("EditButton").addEventListener("click", function () {
             });
           });
       });
+
+      //Back button functionality
+     const frame1 = document.getElementById('frame1');
+     const editingFrame = document.getElementById('editingFrame');
+ 
+     const backButton = document.getElementById('editBackButton');
+     backButton.addEventListener('click', () => {
+         editingFrame.classList.remove('active'); // Hide help chat frame
+         frame1.classList.add('active'); // Show main frame
+     });
+
       // Reset Font Settings
     document.getElementById("resetBtn").addEventListener("click", () => {
         // Query the active tab

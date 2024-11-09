@@ -305,6 +305,34 @@ body {
     font-weight: bold;
 }
 
+#editBackButton {
+    position: absolute;            /* Absolutely position it within the frame */
+    top: 10px;                     /* Distance from the top */
+    left: 10px;                    /* Distance from the left */
+    font-size: 16px;               /* Font size for the back text */
+    cursor: pointer;               /* Change cursor to pointer */
+    color: #000;                   /* Set the color of the text */
+    background-color: transparent; /* Make the background transparent */
+    border: none;                  /* Remove default border */
+    padding: 5px;                  /* Add some padding around the button */
+}
+
+#editBackButton:hover {
+    color: #ECB545;                /* Change color on hover */
+}
+
+/* Back button */
+#editBackButton {
+    align-self: flex-start;
+    background-color: transparent;
+    border: none;
+    color: #4a3f35;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
 /* Labels */
 label {
     font-size: 20px;
