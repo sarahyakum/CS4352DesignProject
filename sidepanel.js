@@ -209,14 +209,22 @@ document.getElementById("EditButton").addEventListener("click", function () {
                 <option value="Lucida Console">Lucida Console</option>
                 <option value="Consolas">Consolas</option>
             </select>
+            <div class="hide">Click to Change Font Type!</div>
             <br>
             <label for="fontSize">Font Size:</label>
-            <input id="fontSize" type="number" min="8" max="48" value="16">
-            <br>
-            <div>
-                <label style="font-weight: bold;"><input type="checkbox" id="bold"> Bold</label>
-                <label style="font-style: italic;"><input type="checkbox" id="italic"> Italic</label>
-                <label style="text-decoration: underline;"><input type="checkbox" id="underline"> Underline</label>
+            <div class="slider-container" style ="margin: 10px auto 0 auto;">
+                <br>
+                <input id="fontSize" class="font-size-slider" type="range" min="8" max="48" value="16" step="1">
+            </div>
+            <div class="hide">Slide the cursor to adjust font size!</div>
+            
+            <div style ="margin: 10px auto 0 auto;">
+                <label style="font-weight: bold; font-size: 20px"><input type="checkbox" id="bold"> Bold</label>
+                <br>
+                <label style="font-style: italic; font-size: 20px"><input type="checkbox" id="italic"> Italic</label>
+                <br>
+                <label style="text-decoration: underline; font-size: 20px "><input type="checkbox" id="underline"> Underline</label>
+                <br>
             </div>
             
             
@@ -225,7 +233,19 @@ document.getElementById("EditButton").addEventListener("click", function () {
             <button id="resetBtn">Reset</button>
             
         </div>
-    `;
+        
+        <script>
+            const fontSizeSlider = document.getElementById('fontSize');
+            const fontSizeValue = document.getElementById('fontSizeValue');
+            
+            fontSizeValue.textContent = fontSizeSlider.value;
+
+            // Update the font size value when the slider changes
+            fontSizeSlider.addEventListener('input', function() {
+                fontSizeValue.textContent = fontSizeSlider.value;  // Change the displayed value
+            });
+        </script>
+        `;
     
     //Back button functionality
     const frame1 = document.getElementById('frame1');

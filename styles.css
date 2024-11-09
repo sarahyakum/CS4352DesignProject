@@ -293,3 +293,171 @@ body {
     color: #ECB545;                /* Change color on hover */
 }
 
+/* Back button */
+#backButton {
+    align-self: flex-start;
+    background-color: transparent;
+    border: none;
+    color: #4a3f35;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Labels */
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4a3f35;
+    margin: 10px auto 0 auto; /* Center the buttons horizontally */
+    padding: 10px;
+}
+
+/* Dropdown (Font Type) */
+#fontType {
+    width: 80%;
+    padding: 8px;
+    font-size: 20px;
+    margin: 10px auto 0 auto; /* Center the buttons horizontally */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border: 2px solid #f4a261; /* Bottom border matching help chat color */
+
+}
+
+/* Font Size input */
+#fontSize {
+    width: 80%;
+    padding: 8px;
+    font-size: 20px;
+    margin: 10px auto 0 auto; /* Center the buttons horizontally */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border: 2px solid #f4a261; /* Bottom border matching help chat color */
+}
+
+/* Checkboxes for Bold, Italic, and Underline */
+.edit-container div label {
+    font-size: 1em;
+    margin-right: 10px;
+    color: #4a3f35;
+}
+
+.edit-container div input[type="checkbox"] {
+    margin-right: 5px;
+    color: #f4a261;
+}
+
+
+.slider-container {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    width: 90%;
+}
+
+.slider-label {
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.font-size-slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+.font-size-slider:hover {
+    opacity: 1;
+}
+
+.font-size-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #f28c44;
+    cursor: pointer; /* Cursor on hover */
+}
+
+.font-size-slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #f28c44;
+    cursor: pointer; /* Cursor on hover */
+}
+
+.font-size-slider::-webkit-slider-thumb:hover {
+    background: #f28c44;
+}
+
+.font-size-slider::-moz-range-thumb:hover {
+    background: #f28c44;
+}
+
+.font-size-value {
+    font-size: 18px;
+    margin-left: 10px;
+    font-weight: 600;
+    color: #f4a261;
+}
+
+
+#resetBtn, #applyBtn {
+    background-color: #f4a261; /* Soft pink color for a cute look */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* More rounded corners for a cute effect */
+    padding: 12px 24px; /* Increased padding for a larger button */
+    font-size: 18px; /* Slightly larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    margin: 10px auto 0 auto;
+}
+
+/* Button Hover Effect */
+#resetBtn:hover, #applyBtn:hover {
+    background-color: #ce7127; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.hide {
+    display: none;
+}
+
+.slider-container:hover + .hide {
+    display: block;
+    color: #ce7127;
+    text-align: center;
+    font-size: 15px;
+}
+
+#fontType:hover + .hide {
+    display: block;
+    color: #ce7127;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 320px) {
+    .edit-container {
+        width: 90%;
+        padding: 15px;
+    }
+}
