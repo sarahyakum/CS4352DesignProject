@@ -216,7 +216,7 @@ document.getElementById("EditButton").addEventListener("click", function () {
             <label for="fontSize">Font Size:</label>
             <div class="slider-container" style ="margin: 10px auto 0 auto;">
                 <br>
-                <input id="fontSize" class="font-size-slider" type="range" min="8" max="48" value="16" step="1">
+                <input id="fontSize" class="font-size-slider" type="range" min="8" max="32" value="16" step="1">
             </div>
             <div class="hide">Slide the cursor to adjust font size!</div>
             
