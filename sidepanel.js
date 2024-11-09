@@ -194,15 +194,33 @@ document.getElementById("EditButton").addEventListener("click", function () {
             <button id="backButton"> Back</button> 
             <label for="fontType">Font Type:</label>
             <select id="fontType">
+                <option value="">Original Font</option>
                 <option value="Arial">Arial</option>
                 <option value="Courier New">Courier New</option>
                 <option value="Times New Roman">Times New Roman</option>
                 <option value="Verdana">Verdana</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Garamond">Garamond</option>
+                <option value="Palatino">Palatino</option>
+                <option value="Brush Script MT">Brush Script MT</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Impact">Impact</option>
+                <option value="Lucida Console">Lucida Console</option>
+                <option value="Consolas">Consolas</option>
             </select>
-
+            <br>
             <label for="fontSize">Font Size:</label>
             <input id="fontSize" type="number" min="8" max="48" value="16">
-
+            <br>
+            <div>
+                <label style="font-weight: bold;"><input type="checkbox" id="bold"> Bold</label>
+                <label style="font-style: italic;"><input type="checkbox" id="italic"> Italic</label>
+                <label style="text-decoration: underline;"><input type="checkbox" id="underline"> Underline</label>
+            </div>
+            
+            
+            <br>
             <button id="applyBtn">Apply Settings</button>
             <button id="resetBtn">Reset</button>
             
@@ -222,15 +240,21 @@ document.getElementById("EditButton").addEventListener("click", function () {
     document.getElementById("applyBtn").addEventListener("click", () => {
         const fontType = document.getElementById("fontType").value;
         const fontSize = document.getElementById("fontSize").value;
+        
+
+        const isBold = document.getElementById("bold").checked; // Check if bold is selected
+        const isItalic = document.getElementById("italic").checked; // Check if italic is selected
+        const isUnderline = document.getElementById("underline").checked; // Check if underline is selected
+
       
         // Get the active tab and inject the script
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-          chrome.scripting.executeScript({
-            target: { tabId: tabs[0].id },
-            func: changeFontStyle,
-            args: [fontType, fontSize]
+            chrome.scripting.executeScript({
+              target: { tabId: tabs[0].id }, // Target the active tab
+              func: changeFontStyle, // Function to change the font style
+              args: [fontType, fontSize, isBold, isItalic, isUnderline] // Pass all style options as arguments
+            });
           });
-        });
       });
       // Reset Font Settings
     document.getElementById("resetBtn").addEventListener("click", () => {
@@ -245,15 +269,28 @@ document.getElementById("EditButton").addEventListener("click", function () {
   
       
       // Function to change the font style on the webpage
-      function changeFontStyle(fontType, fontSize) {
-        document.body.style.fontFamily = fontType;
-        document.body.style.fontSize = fontSize + "px";
+      function changeFontStyle(fontType, fontSize, isBold, isItalic, isUnderline) {
+        const elements = document.querySelectorAll("body, p, h1, h2, h3, h4, h5, h6, span, div, a");
+        elements.forEach((element) => {
+          element.style.fontFamily = fontType || ''; // Apply font family if selected
+          element.style.fontSize = fontSize ? fontSize + "px" : ''; // Apply font size if provided
+          
+          element.style.fontWeight = isBold ? "bold" : "normal"; // Apply bold if selected
+          element.style.fontStyle = isItalic ? "italic" : "normal"; // Apply italic if selected
+          element.style.textDecoration = isUnderline ? "underline" : "none"; // Apply underline if selected
+        });
       }
       // Function to reset the font style on the webpage
-    function resetFontStyle() {
-        document.body.style.fontFamily = ''; // Reset font family
-        document.body.style.fontSize = ''; // Reset font size
-    }
+      function resetFontStyle() {
+        const elements = document.querySelectorAll("body, p, h1, h2, h3, h4, h5, h6, span, div, a");
+        elements.forEach((element) => {
+          element.style.fontFamily = '';
+          element.style.fontSize = '';
+          element.style.fontWeight = '';
+          element.style.fontStyle = '';
+          element.style.textDecoration = '';
+        });
+      }
 
 });
 
