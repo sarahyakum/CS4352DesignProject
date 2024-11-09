@@ -1,16 +1,46 @@
-
 <!doctype html>
 <html>
-  <head>
-    <title>Golden Access</title>
-  </head>
-  <body>
-    <h1>Hover Feature</h1>
-    <p>Gives more information based on pointer.</p>
-    <h1>Page Editing</h1>
-    <p>Allows for user to change site for their needs.</p>
-    <h1>Help Chat</h1>
-    <p>User can get help with a real person</p>
-    <script src="sidepanel.js"></script>
-  </body>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <title>Test Sidebar</title>
+  <style>
+    .frame {
+      display: none; /* Hide all frames initially */
+    }
+    .active {
+      display: block; /* Show only the active frame */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Home? Frame -->
+<div id="frame1" class="frame active">
+  <h1 class="title">Golden Access</h1>
+  <h1>Hover Feature</h1>
+  <p>Gives more information based on pointer.</p>
+  <button class="OptionButton">Turn On</button>
+
+  <h1>Page Editing</h1>
+  <p>Allows for user to change site for their needs.</p>
+  <button class="OptionButton">Edit Website</button>
+
+  <h1>Help Chat</h1>
+  <p>User can get help with a real person</p>
+  <button id="helpChatButton">Open Help Chat</button>
+
+</div>
+
+
+<!-- Help Chat Frame -->
+<div id="helpChatFrame" class="frame">
+  <div id="chatContainer"></div>
+
+</div>
+
+
+<script src="sidepanel.js"></script>
+
+
+</body>
 </html>

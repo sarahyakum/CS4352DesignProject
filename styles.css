@@ -1,3 +1,247 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.frame {
+    display: none;
+    
+}
+
+/* Hides elements by default (to be toggled via JavaScript) */
+.hidden {
+    display: none;                  /* Sets display to none */
+}
+
+.active {
+    display: block; /* Show only the active frame */
+}
+
+.title {
+    font-size: 100px; /* Large font size for prominence */
+    color: black;
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-family: 'Arial', sans-serif; /* Modern font family */
+}
+
+/* Home Frame Styles */
+#frame1 {
+    height: 900px;
+    max-width: 800px; /* Maximum width for the frame */
+    margin: 20px auto; /* Center the frame with margin */
+    padding: 20px; /* Padding inside the frame */
+    background-color: #fefaf6;  /* Light beige */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Headings in the Home Frame */
+#frame1 h1 {
+    font-size: 24px; /* Font size for headings */
+    color: #333; /* Dark text for readability */
+    margin-bottom: 10px; /* Spacing below headings */
+    border-bottom: 2px solid #f4a261; /* Bottom border matching help chat color */
+    padding-bottom: 5px; /* Padding for better separation */
+}
+
+/* Paragraphs in the Home Frame */
+#frame1 p {
+    font-size: 16px; /* Font size for paragraphs */
+    color: #666; /* Slightly lighter text for paragraphs */
+    line-height: 1.5; /* Line height for better readability */
+    margin-bottom: 20px; /* Space below paragraphs */
+}
+
+/* Help Chat Button in the Home Frame */
+.OptionButton {
+    background-color: #f4a261;
+    color: white;
+    border: none; /* Remove default border */
+    border-radius: 25px;
+    padding: 12px 24px; /* Increased padding for a larger button */
+    font-size: 18px; /* Slightly larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    /*Center buttons*/
+    display: block;
+    margin: auto;
+}
+
+/* Container that holds the button */
+.container {
+    position: relative; /* Sets container as the reference point for absolute positioning */
+    height: 200px;
+    border: 1px solid #ccc;
+}
+
+/* Button Styles */
+#centeredButton {
+    position: absolute; /* Enables absolute positioning */
+    top: 50%; /* Move the button down to the center vertically */
+    left: 50%; /* Move the button right to the center horizontally */
+    transform: translate(-50%, -50%); /* Shift back by half its width and height for perfect centering */
+}
+
+/* Help Chat Button in the Home Frame */
+#helpChatButton {
+    background-color: #f4a261; /* Soft pink color for a cute look */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* More rounded corners for a cute effect */
+    padding: 12px 24px; /* Increased padding for a larger button */
+    font-size: 18px; /* Slightly larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+     /*Center buttons*/
+    display: block;
+    margin: auto;
+}
+
+/* Button Hover Effect */
+#helpChatButton:hover {
+    background-color: #ce7127; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Button Active Effect */
+#helpChatButton:active {
+    transform: scale(0.95); /* Shrink button when clicked for effect */
+}
+
+.OptionButton:hover {
+    background-color: #ce7127; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Button Active Effect */
+.OptionButton:active {
+    transform: scale(0.95); /* Shrink button when clicked for effect */
+}
+
+.chat-container {
+    width: 95%;
+    height: 100vh;
+    border: 2px solid #f4a261;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fefaf6;  /* Light beige */
+    position: relative;
+    margin: 20px auto ;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    background-color: #fefaf6;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #f4a261;
+    position: relative;
+    font-size: 25px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #fffaf0;
+    border-bottom: 1px solid #ccc;
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+}
+
+.chat-messages::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
+.message {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    word-wrap: break-word;
+    font-size: 18px;
+}
+
+.message.user {
+    background-color: #f4a261;
+    color: white;
+    align-self: flex-end;
+    border-radius: 10px 10px 0 10px;
+}
+
+.message.auto {
+    background-color: #e0e0e0;
+    color: black;
+    align-self: flex-start;
+    border-radius: 10px 10px 10px 0;
+}
+
+.typing {
+    font-style: italic;
+    color: gray;
+}
+
+.chat-input-container {
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.chat-input-container input {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+    margin-right: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input-container button {
+    width: 25%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.263);
+}
+
+.chat-input-container button:hover {
+    background-color: #0056b3;
+}
+
+#backButton {
+    position: absolute;            /* Absolutely position it within the frame */
+    top: 10px;                     /* Distance from the top */
+    left: 10px;                    /* Distance from the left */
+    font-size: 16px;               /* Font size for the back text */
+    cursor: pointer;               /* Change cursor to pointer */
+    color: #000;                   /* Set the color of the text */
+    background-color: transparent; /* Make the background transparent */
+    border: none;                  /* Remove default border */
+    padding: 5px;                  /* Add some padding around the button */
+}
+
+#backButton:hover {
+    color: #ECB545;                /* Change color on hover */
+}
+
 .custom-tooltip {
   position: absolute;
   background-color: #333;
