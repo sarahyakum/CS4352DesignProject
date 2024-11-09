@@ -190,14 +190,22 @@ document.getElementById("EditButton").addEventListener("click", function () {
     // Add HTML code inside the editContainer
     editContainer.innerHTML = `
         <div class="edit-container">
-            <button id="backButton"> Back</button>
-            <div>
-                <button id="getText">Get Selected Text</button>
-                <p id="output"></p>
+            <div class="edit-header">Edit Websites Text</div>
+            <button id="backButton"> Back</button> 
+            <label for="fontType">Font Type:</label>
+            <select id="fontType">
+                <option value="Arial">Arial</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+            </select>
+
+            <label for="fontSize">Font Size:</label>
+            <input id="fontSize" type="number" min="8" max="48" value="16">
+
+            <button id="applyBtn">Apply Settings</button>
+            <button id="resetBtn">Reset</button>
             
-            </div>
-            
-        
         </div>
     `;
     
@@ -210,12 +218,42 @@ document.getElementById("EditButton").addEventListener("click", function () {
         editingFrame.classList.remove('active'); // Hide help chat frame
         frame1.classList.add('active'); // Show main frame
     });
-
-    chrome.tabs.executeScript( {
-        code: "window.getSelection().toString();"
-      }, function(selection) {
-        alert(selection[0]);
+    //calls script to change fonts
+    document.getElementById("applyBtn").addEventListener("click", () => {
+        const fontType = document.getElementById("fontType").value;
+        const fontSize = document.getElementById("fontSize").value;
+      
+        // Get the active tab and inject the script
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+          chrome.scripting.executeScript({
+            target: { tabId: tabs[0].id },
+            func: changeFontStyle,
+            args: [fontType, fontSize]
+          });
+        });
       });
+      // Reset Font Settings
+    document.getElementById("resetBtn").addEventListener("click", () => {
+        // Query the active tab
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.scripting.executeScript({
+            target: { tabId: tabs[0].id }, // Target the active tab
+            func: resetFontStyle // Function to reset the font style
+        });
+        });
+    });
+  
+      
+      // Function to change the font style on the webpage
+      function changeFontStyle(fontType, fontSize) {
+        document.body.style.fontFamily = fontType;
+        document.body.style.fontSize = fontSize + "px";
+      }
+      // Function to reset the font style on the webpage
+    function resetFontStyle() {
+        document.body.style.fontFamily = ''; // Reset font family
+        document.body.style.fontSize = ''; // Reset font size
+    }
 
 });
 

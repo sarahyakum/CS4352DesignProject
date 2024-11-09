@@ -186,6 +186,18 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+.edit-header {
+    background-color: #fefaf6;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #f4a261;
+    position: relative;
+    font-size: 25px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
 .chat-messages {
     flex: 1;
