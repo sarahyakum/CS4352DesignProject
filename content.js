@@ -1,8 +1,7 @@
 // Dictionary mapping button classes/IDs to descriptions
 const tooltipDictionary = {
-  "cart-button": "Checkout Cart"
-  "Gic-wrapper”: “Change store locations nearest to you”
-  "cart-button": "Checkout Cart"
+  "cart-button": "Checkout Cart",
+  "gic-wrapper": "Change store locations nearest to you",
   "ld-Search": "Search",
   "ld-Spark": "Home Page",
   "navbar-brand": "Home Page",
@@ -12,7 +11,9 @@ const tooltipDictionary = {
   "phone-number": "Call this number to reach us",
   "dropdown-toggle": "Click to view options",
   "main-nav-links": "Click to open up the page",
-  "nurse-help-line-md": "Dials (713) 338-7979 upon selection"
+  "nurse-help-line-md": "Dials (713) 338-7979 upon selection",
+  "ld-menu": "Menu",
+  "ld-ChevronDown": "Click to view options"
 };
 
 // Function to create tooltip element
@@ -20,7 +21,7 @@ function createTooltipElement(text) {
   const tooltip = document.createElement("div");
   tooltip.className = "custom-tooltip";
   tooltip.innerHTML = `
-    <span>${text}</span>
+    <span class="text-tooltip">${text}</span>
     <button class="close-tooltip">X</button>
   `;
   return tooltip;
