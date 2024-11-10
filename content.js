@@ -1,6 +1,18 @@
 // Dictionary mapping button classes/IDs to descriptions
 const tooltipDictionary = {
-  "cart-button": "TEST CART DESCRIPTION"
+  "cart-button": "Checkout Cart"
+  "Gic-wrapper”: “Change store locations nearest to you”
+  "cart-button": "Checkout Cart"
+  "ld-Search": "Search",
+  "ld-Spark": "Home Page",
+  "navbar-brand": "Home Page",
+  "fa-search": "Search",
+  "icon-search": "Search",
+  "schedule-online-md": "Click to book an appointment through the website",
+  "phone-number": "Call this number to reach us",
+  "dropdown-toggle": "Click to view options",
+  "main-nav-links": "Click to open up the page",
+  "nurse-help-line-md": "Dials (713) 338-7979 upon selection"
 };
 
 // Function to create tooltip element
