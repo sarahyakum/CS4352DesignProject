@@ -164,7 +164,6 @@ body {
 .edit-container {
     width: 95%;
     height: 100vh;
-    border: 2px solid #f4a261;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
