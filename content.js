@@ -1,8 +1,8 @@
 // Dictionary mapping button classes/IDs to descriptions
 const tooltipDictionary = {
-  "cart-button": "Checkout Cart"
-  "Gic-wrapper”: “Change store locations nearest to you”
-  "cart-button": "Checkout Cart"
+  "cart-button": "Checkout Cart",
+  "Gic-wrapper": "Change store locations nearest to you",
+  "cart-button": "Checkout Cart",
   "ld-Search": "Search",
   "ld-Spark": "Home Page",
   "navbar-brand": "Home Page",
