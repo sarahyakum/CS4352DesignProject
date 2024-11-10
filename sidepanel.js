@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Set initial checkbox state from chrome.storage
     chrome.storage.sync.get('tooltipEnabled', (data) => {
-        switchCheckbox.checked = data.tooltipEnabled || false;
+        switchCheckbox.checked = false;
     });
 
     // Update chrome.storage when checkbox state changes

@@ -65,7 +65,6 @@ function showTooltip(event, text) {
 // Event listener for hover and tooltip display
 document.addEventListener("mouseover", (event) => {
   const target = event.target;
-  let tooltip = document.querySelector(".custom-tooltip");
   chrome.storage.sync.get('tooltipEnabled', (data) => {
     if (!data.tooltipEnabled) return;
     
