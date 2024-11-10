@@ -18,6 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
         frame1.classList.remove('active'); // Hide main frame
         editingFrame.classList.add('active'); // Show help chat frame
     });
+
+    const switchCheckbox = document.querySelector('.switch-container input[type="checkbox"]');
+    
+    // Set initial checkbox state from chrome.storage
+    chrome.storage.sync.get('tooltipEnabled', (data) => {
+        switchCheckbox.checked = data.tooltipEnabled || false;
+    });
+
+    // Update chrome.storage when checkbox state changes
+    switchCheckbox.addEventListener('change', () => {
+        chrome.storage.sync.set({ tooltipEnabled: switchCheckbox.checked });
+    });
 });
 
 document.getElementById("helpChatButton").addEventListener("click", function () {
