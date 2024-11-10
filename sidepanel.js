@@ -263,9 +263,9 @@ document.getElementById("EditButton").addEventListener("click", function () {
                 <br>
                 <input id="fontSize" class="font-size-slider" type="range" min="8" max="32" value="16" step="1">
             </div>
-            <div class="hide">Slide the cursor to adjust font size!</div>
-            
-            <div style ="margin: 10px auto 0 auto;">
+            <div class="hide">Slide the Cursor to Adjust Font Size!</div>
+            <label for="fontSize">Font Style:</label>
+            <div class="checkbox-container" style ="margin: 10px auto 0 auto;">
                 <label style="font-weight: bold; font-size: 20px"><input type="checkbox" id="bold"> Bold</label>
                 <br>
                 <label style="font-style: italic; font-size: 20px"><input type="checkbox" id="italic"> Italic</label>
@@ -273,11 +273,14 @@ document.getElementById("EditButton").addEventListener("click", function () {
                 <label style="text-decoration: underline; font-size: 20px "><input type="checkbox" id="underline"> Underline</label>
                 <br>
             </div>
+            <div class="hide">Click the Checkboxes to Change Font Style!</div>
             
             
             <br>
             <button id="applyBtn">Apply Settings</button>
+            <div class="hide">Click to Save Your Changes</div>
             <button id="resetBtn">Reset</button>
+            <div class="hide">Click to Reset to Original Settings</div>
             
         </div>
         
@@ -362,5 +365,3 @@ document.getElementById("EditButton").addEventListener("click", function () {
       }
 
 });
-
-

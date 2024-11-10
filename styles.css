@@ -55,7 +55,7 @@ body {
 }
 
 /* Help Chat Button in the Home Frame */
-.OptionButton {
+.OptionButton, #helpChatButton, #EditButton  {
     background-color: #f4a261;
     color: white;
     border: none; /* Remove default border */
@@ -85,67 +85,14 @@ body {
     transform: translate(-50%, -50%); /* Shift back by half its width and height for perfect centering */
 }
 
-/* Help Chat Button in the Home Frame */
-#helpChatButton {
-    background-color: #f4a261; /* Soft pink color for a cute look */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 25px; /* More rounded corners for a cute effect */
-    padding: 12px 24px; /* Increased padding for a larger button */
-    font-size: 18px; /* Slightly larger font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-     /*Center buttons*/
-    display: block;
-    margin: auto;
-}
-
 /* Button Hover Effect */
-#helpChatButton:hover {
+#helpChatButton:hover, #EditChatButton:hover,.OptionButton:hover {
     background-color: #ce7127; /* Darker shade on hover */
     transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
 /* Button Active Effect */
-#helpChatButton:active {
-    transform: scale(0.95); /* Shrink button when clicked for effect */
-}
-
-/* Edit Button in the Home Frame */
-#EditButton {
-    background-color: #f4a261; /* Soft pink color for a cute look */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 25px; /* More rounded corners for a cute effect */
-    padding: 12px 24px; /* Increased padding for a larger button */
-    font-size: 18px; /* Slightly larger font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-     /*Center buttons*/
-    display: block;
-    margin: auto;
-}
-
-/* Button Hover Effect */
-#EditChatButton:hover {
-    background-color: #ce7127; /* Darker shade on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-/* Button Active Effect */
-#EditChatButton:active {
-    transform: scale(0.95); /* Shrink button when clicked for effect */
-}
-
-.OptionButton:hover {
-    background-color: #ce7127; /* Darker shade on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-/* Button Active Effect */
-.OptionButton:active {
+#helpChatButton:active, #EditChatButton:active,.OptionButton:active  {
     transform: scale(0.95); /* Shrink button when clicked for effect */
 }
 
@@ -164,7 +111,6 @@ body {
 .edit-container {
     width: 95%;
     height: 100vh;
-    border: 2px solid #f4a261;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -468,14 +414,7 @@ label {
     display: none;
 }
 
-.slider-container:hover + .hide {
-    display: block;
-    color: #ce7127;
-    text-align: center;
-    font-size: 15px;
-}
-
-#fontType:hover + .hide {
+.checkbox-container:hover + .hide, .slider-container:hover + .hide, #fontType:hover + .hide, #resetBtn:hover + .hide, #applyBtn:hover + .hide  {
     display: block;
     color: #ce7127;
     text-align: center;
@@ -488,4 +427,99 @@ label {
         width: 90%;
         padding: 15px;
     }
+}
+
+.custom-tooltip {
+  position: absolute;
+  background-color: #f4a261;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.custom-tooltip .close-tooltip {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* Parent container to center the switch */
+.switch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Takes full width of parent */
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 15%;
+    height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    height: 35px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #f4a261;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #f4a261;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
