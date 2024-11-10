@@ -19,11 +19,17 @@
   <h1 class="title">Golden Access</h1>
   <h1>Hover Feature</h1>
   <p>Gives more information based on pointer.</p>
-  <button class="OptionButton">Turn On</button>
+<!--  <button class="OptionButton">Turn On</button>-->
+  <div class="switch-container">
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
 
   <h1>Page Editing</h1>
   <p>Allows for user to change site for their needs.</p>
-  <button class="OptionButton">Edit Website</button>
+  <button id="EditButton">Edit Website</button>
 
   <h1>Help Chat</h1>
   <p>User can get help with a real person</p>
@@ -38,6 +44,11 @@
 
 </div>
 
+<!-- Editing Frame -->
+<div id="editingFrame" class="frame">
+  <div id="editContainer"></div>
+
+</div>
 
 <script src="sidepanel.js"></script>
 
