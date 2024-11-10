@@ -219,7 +219,7 @@ document.getElementById("EditButton").addEventListener("click", function () {
                 <input id="fontSize" class="font-size-slider" type="range" min="8" max="32" value="16" step="1">
             </div>
             <div class="hide">Slide the Cursor to Adjust Font Size!</div>
-            <label for="fontSize">Font Decoration:</label>
+            <label for="fontSize">Font Style:</label>
             <div class="checkbox-container" style ="margin: 10px auto 0 auto;">
                 <label style="font-weight: bold; font-size: 20px"><input type="checkbox" id="bold"> Bold</label>
                 <br>
