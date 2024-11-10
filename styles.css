@@ -55,7 +55,7 @@ body {
 }
 
 /* Help Chat Button in the Home Frame */
-.OptionButton {
+.OptionButton, #helpChatButton, #EditButton  {
     background-color: #f4a261;
     color: white;
     border: none; /* Remove default border */
@@ -85,67 +85,30 @@ body {
     transform: translate(-50%, -50%); /* Shift back by half its width and height for perfect centering */
 }
 
-/* Help Chat Button in the Home Frame */
-#helpChatButton {
-    background-color: #f4a261; /* Soft pink color for a cute look */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 25px; /* More rounded corners for a cute effect */
-    padding: 12px 24px; /* Increased padding for a larger button */
-    font-size: 18px; /* Slightly larger font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-     /*Center buttons*/
-    display: block;
-    margin: auto;
-}
+/*!* Help Chat Button in the Home Frame *!*/
+/*#helpChatButton {*/
+/*    background-color: #f4a261; !* Soft pink color for a cute look *!*/
+/*    color: white; !* White text *!*/
+/*    border: none; !* Remove default border *!*/
+/*    border-radius: 25px; !* More rounded corners for a cute effect *!*/
+/*    padding: 12px 24px; !* Increased padding for a larger button *!*/
+/*    font-size: 18px; !* Slightly larger font size *!*/
+/*    cursor: pointer; !* Pointer cursor on hover *!*/
+/*    transition: background-color 0.3s ease, transform 0.2s ease; !* Smooth background change and scaling *!*/
+/*    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); !* Soft shadow for depth *!*/
+/*     !*Center buttons*!*/
+/*    display: block;*/
+/*    margin: auto;*/
+/*}*/
 
 /* Button Hover Effect */
-#helpChatButton:hover {
+#helpChatButton:hover, #EditChatButton:hover,.OptionButton:hover {
     background-color: #ce7127; /* Darker shade on hover */
     transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
 /* Button Active Effect */
-#helpChatButton:active {
-    transform: scale(0.95); /* Shrink button when clicked for effect */
-}
-
-/* Edit Button in the Home Frame */
-#EditButton {
-    background-color: #f4a261; /* Soft pink color for a cute look */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 25px; /* More rounded corners for a cute effect */
-    padding: 12px 24px; /* Increased padding for a larger button */
-    font-size: 18px; /* Slightly larger font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-     /*Center buttons*/
-    display: block;
-    margin: auto;
-}
-
-/* Button Hover Effect */
-#EditChatButton:hover {
-    background-color: #ce7127; /* Darker shade on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-/* Button Active Effect */
-#EditChatButton:active {
-    transform: scale(0.95); /* Shrink button when clicked for effect */
-}
-
-.OptionButton:hover {
-    background-color: #ce7127; /* Darker shade on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-/* Button Active Effect */
-.OptionButton:active {
+#helpChatButton:active, #EditChatButton:active,.OptionButton:active  {
     transform: scale(0.95); /* Shrink button when clicked for effect */
 }
 
