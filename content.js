@@ -10,7 +10,6 @@ const tooltipDictionary = {
   "schedule-online-md": "Click to book an appointment through the website",
   "phone-number": "Call this number to reach us",
   "dropdown-toggle": "Click to view options",
-  "main-nav-links": "Click to open up the page",
   "nurse-help-line-md": "Dials (713) 338-7979 upon selection",
   "ld-menu": "Menu",
   "ld-ChevronDown": "Click to view options"
@@ -66,11 +65,16 @@ function showTooltip(event, text) {
 // Event listener for hover and tooltip display
 document.addEventListener("mouseover", (event) => {
   const target = event.target;
-  for (const key in tooltipDictionary) {
-    if (target.classList.contains(key) || target.id === key) {
-      showTooltip(event, tooltipDictionary[key]);
-      break;
+  let tooltip = document.querySelector(".custom-tooltip");
+  chrome.storage.sync.get('tooltipEnabled', (data) => {
+    if (!data.tooltipEnabled) return;
+    
+    for (const key in tooltipDictionary) {
+      if (target.classList.contains(key) || target.id === key) {
+        showTooltip(event, tooltipDictionary[key]);
+        break;
+      }
     }
-  }
+  })
 });
 
