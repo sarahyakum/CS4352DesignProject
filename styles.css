@@ -468,14 +468,7 @@ label {
     display: none;
 }
 
-.slider-container:hover + .hide {
-    display: block;
-    color: #ce7127;
-    text-align: center;
-    font-size: 15px;
-}
-
-#fontType:hover + .hide {
+.checkbox-container:hover + .hide, .slider-container:hover + .hide, #fontType:hover + .hide, #resetBtn:hover + .hide, #applyBtn:hover + .hide  {
     display: block;
     color: #ce7127;
     text-align: center;
