@@ -16,7 +16,7 @@ const tooltipDictionary = {
   "linkcard-Shoppets-GridPOVBanners-mediumBanner-contentZone5-tajMHxuR": "Shop for your Pets",
   "linkcard-Shopgifts-GridPOVBanners-tallBanner-contentZone7-qVBsweDL": "Shop for Technology",
   "linkcard-Shopall-AdjustableCardCarousel-contentZone11-SkSQc7RM-card-0": "Holiday Discounts",
-  "linkcard-Shopnow-AdjustableCardCarousel-contentZone11-gOabrWL6-card-1": "Shop for Makeup",
+  "linkcard-Shopnow-GridPOVBanners-largeBanner-contentZone15-dZNj69TK": "Shop Flash",
   "linkcard-Shopnow-AdjustableCardCarousel-contentZone11-P2jQfMnT-card-2": "Shop Cleaning Devices",
   "linkcard-Shopgifts-GridPOVBanners-smallBanner-contentZone19-VFZuD4DN": "Shop Gifts",
   "linkcard-Shopgifts-GridPOVBanners-mediumBanner-contentZone21-8mKdOFOS": "Shop Gifts",
