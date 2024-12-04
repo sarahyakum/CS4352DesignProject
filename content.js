@@ -11,8 +11,25 @@ const tooltipDictionary = {
   "phone-number": "Call this number to reach us",
   "dropdown-toggle": "Click to view options",
   "nurse-help-line-md": "Dials (713) 338-7979 upon selection",
-  "ld-menu": "Menu",
-  "ld-ChevronDown": "Click to view options"
+  "ld-Menu": "Menu",
+  "ld-ChevronDown": "Click to view options",
+  "linkcard-Shoppets-GridPOVBanners-mediumBanner-contentZone5-tajMHxuR": "Shop for your Pets",
+  "linkcard-Shopgifts-GridPOVBanners-tallBanner-contentZone7-qVBsweDL": "Shop for Technology",
+  "linkcard-Shopall-AdjustableCardCarousel-contentZone11-SkSQc7RM-card-0": "Holiday Discounts",
+  "linkcard-Shopnow-AdjustableCardCarousel-contentZone11-gOabrWL6-card-1": "Shop for Makeup",
+  "linkcard-Shopnow-AdjustableCardCarousel-contentZone11-P2jQfMnT-card-2": "Shop Cleaning Devices",
+  "linkcard-Shopgifts-GridPOVBanners-smallBanner-contentZone19-VFZuD4DN": "Shop Gifts",
+  "linkcard-Shopgifts-GridPOVBanners-mediumBanner-contentZone21-8mKdOFOS": "Shop Gifts",
+  "icon-menu-open": "Open Menu",
+  "hero-search": "Enter Search Here",
+  "card-body": "Press Button to learn more",
+  "text-overlay": "Click to learn more",
+  "section-list": "Select your needs",
+  "quick-links-container": "Immediate help",
+  "btn-tertiary": "Click Here",
+  "gtranslate_selector": "Pick your language",
+  "popular-service": "Select a Service"
+
 };
 
 // Function to create tooltip element
