@@ -11,7 +11,7 @@ const tooltipDictionary = {
   "phone-number": "Call this number to reach us",
   "dropdown-toggle": "Click to view options",
   "nurse-help-line-md": "Dials (713) 338-7979 upon selection",
-  "ld-menu": "Menu",
+  "ld-Menu": "Menu",
   "ld-ChevronDown": "Click to view options"
 };
 
