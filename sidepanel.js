@@ -41,6 +41,7 @@ document.getElementById("helpChatButton").addEventListener("click", function () 
             <div class="chat-header">Help Chat</div> 
             <button id="backButton"> Back</button>
             <div class="chat-messages" id="chatMessages"></div>
+            <div class="suggestion-box" id="suggestionBox"></div>
             <div class="chat-input-container">
                 <input type="text" id="chatInput" placeholder="Enter your message..." autocomplete="off">
                 <button id="sendBtn">Send</button>
@@ -52,6 +53,7 @@ document.getElementById("helpChatButton").addEventListener("click", function () 
     const chatInput = document.getElementById('chatInput'); // User input
     const chatMessages = document.getElementById('chatMessages'); // Message area
     const sendBtn = document.getElementById('sendBtn'); // Send button
+    const suggestionBox = document.getElementById('suggestionBox'); // Suggestion box
     const sendURL = document.getElementById('sendURL'); // Send URL button
 
     // Back button functionality
@@ -118,8 +120,33 @@ document.getElementById("helpChatButton").addEventListener("click", function () 
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             if (tabs.length > 0) {
                 callback(tabs[0].url);
+                updateSuggestionBox(tabs[0].url);
             }
         });
+    }
+
+    // Populate the suggestion box based on the current URL
+    function updateSuggestionBox(currentUrl) {
+        suggestionBox.innerHTML = ''; // Clear existing suggestions
+
+        for (const baseUrl in responses) {
+            if (currentUrl.includes(baseUrl)) {
+                const urlKeywords = Object.keys(responses[baseUrl]?.keywords || {});
+
+                if (urlKeywords.length > 0) {
+                    urlKeywords.forEach((keyword) => {
+                        const suggestion = document.createElement('div');
+                        suggestion.className = 'suggestion';
+                        suggestion.textContent = keyword;
+                        suggestion.addEventListener('click', () => {
+                            chatInput.value = keyword; // Autofill input with keyword
+                        });
+                        suggestionBox.appendChild(suggestion);
+                    });
+                }
+                break; // Stop searching once the matching URL is found
+            }
+        }
     }
 
     // Function to show typing indicator
@@ -187,7 +214,7 @@ document.getElementById("helpChatButton").addEventListener("click", function () 
                         setTimeout(() => {
                             const noMatchMessage = document.createElement('div');
                             noMatchMessage.classList.add('message', 'auto');
-                            noMatchMessage.textContent = 'I\'m sorry, I didn\'t understand that.';
+                            noMatchMessage.textContent = 'I\'m sorry, I didn\'t understand that. Try using a keyword from our suggestion bank at the bottom of the chat.';
                             chatMessages.appendChild(noMatchMessage);
                             chatMessages.scrollTop = chatMessages.scrollHeight;
                         }, 1000);
