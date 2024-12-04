@@ -253,20 +253,20 @@ document.getElementById("EditButton").addEventListener("click", function () {
             <button id="editBackButton"> Back</button> 
             <label for="fontType">Font Type:</label>
             <select id="fontType">
-                <option value="">Original Font</option>
-                <option value="Arial">Arial</option>
-                <option value="Courier New">Courier New</option>
-                <option value="Times New Roman">Times New Roman</option>
-                <option value="Verdana">Verdana</option>
-                <option value="Helvetica">Helvetica</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Garamond">Garamond</option>
-                <option value="Palatino">Palatino</option>
-                <option value="Brush Script MT">Brush Script MT</option>
-                <option value="Comic Sans MS">Comic Sans MS</option>
-                <option value="Impact">Impact</option>
-                <option value="Lucida Console">Lucida Console</option>
-                <option value="Consolas">Consolas</option>
+                <option value="" style="font-family:sans-serif;">Original Font</option>
+                <option value="Arial" style="font-family:Arial, sans-serif;">Arial</option>
+                <option value="Courier New" style="font-family:'Courier New', monospace;">Courier New</option>
+                <option value="Times New Roman" style="font-family:'Times New Roman', Times, serif;">Times New Roman</option>
+                <option value="Verdana" style="font-family:Verdana, sans-serif;">Verdana</option>
+                <option value="Helvetica" style="font-family:Helvetica, sans-serif;">Helvetica</option>
+                <option value="Georgia" style="font-family:Georgia, serif;">Georgia</option>
+                <option value="Garamond" style="font-family:Garamond, serif;">Garamond</option>
+                <option value="Palatino" style="font-family:Palatino, serif;">Palatino</option>
+                <option value="Brush Script MT" style="font-family:'Brush Script MT', cursive;">Brush Script MT</option>
+                <option value="Comic Sans MS" style="font-family:'Comic Sans MS', cursive;">Comic Sans MS</option>
+                <option value="Impact" style="font-family:Impact, sans-serif;">Impact</option>
+                <option value="Lucida Console" style="font-family:'Lucida Console', monospace;">Lucida Console</option>
+                <option value="Consolas" style="font-family:Consolas, monospace;">Consolas</option>
             </select>
             <div class="hide">Click to Change Font Type!</div>
             <br>
