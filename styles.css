@@ -140,7 +140,7 @@ body {
     font-weight: bold;
     border-bottom: 1px solid #f4a261;
     position: relative;
-    font-size: 25px;
+    font-size: 23px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -280,29 +280,20 @@ body {
     position: absolute;            /* Absolutely position it within the frame */
     top: 10px;                     /* Distance from the top */
     left: 10px;                    /* Distance from the left */
-    font-size: 16px;               /* Font size for the back text */
+    font-size: 23px;               /* Font size for the back text */
     cursor: pointer;               /* Change cursor to pointer */
     color: #000;                   /* Set the color of the text */
     background-color: transparent; /* Make the background transparent */
     border: none;                  /* Remove default border */
-    padding: 5px;                  /* Add some padding around the button */
+    padding: 5px;
+    font-weight: 500;                  /* Add some padding around the button */
 }
 
 #editBackButton:hover {
     color: #ECB545;                /* Change color on hover */
 }
 
-/* Back button */
-#editBackButton {
-    align-self: flex-start;
-    background-color: transparent;
-    border: none;
-    color: #4a3f35;
-    font-size: 1em;
-    cursor: pointer;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
+
 
 /* Labels */
 label {
@@ -359,6 +350,7 @@ label {
     display: flex;
     align-items: center;
     width: 90%;
+    font-weight: 25px;
 }
 
 .slider-label {
@@ -366,6 +358,15 @@ label {
     margin-right: 10px;
     font-weight: 600;
     color: #333;
+}
+
+#8px {
+    font-size: 8px;
+
+}
+#20px {
+    font-size: 20px;
+
 }
 
 .font-size-slider {

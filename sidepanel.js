@@ -276,8 +276,8 @@ document.getElementById("EditButton").addEventListener("click", function () {
     // Add HTML code inside the editContainer
     editContainer.innerHTML = `
         <div class="edit-container">
-            <div class="edit-header">Edit Websites Text</div>
-            <button id="editBackButton"> Back</button> 
+            <div class="edit-header">Text Editor</div>
+            <button id="editBackButton"> &larr; </button> 
             <label for="fontType">Font Type:</label>
             <select id="fontType">
                 <option value="" style="font-family:sans-serif;">Original Font</option>
@@ -298,19 +298,24 @@ document.getElementById("EditButton").addEventListener("click", function () {
             <div class="hide">Click to Change Font Type!</div>
             <br>
             <label for="fontSize">Font Size:</label>
-            <div class="slider-container" style ="margin: 10px auto 0 auto;">
-                <br>
-                <input id="fontSize" class="font-size-slider" type="range" min="8" max="32" value="16" step="1">
+            <br>
+            
+            <div class="slider-container" style =" margin: 10px auto 0 auto;">
+                <span id="slider" style="font-size: 8px">Aa</span> 
+                <input id="fontSize" class="font-size-slider" type="range" min="8" max="24" value="16" step="1">
+                 <span id="slider" style="font-size: 24px">Aa</span>
             </div>
+            
             <div class="hide">Slide the Cursor to Adjust Font Size!</div>
+            <br>
             <label for="fontSize">Font Style:</label>
             <div class="checkbox-container" style ="margin: 10px auto 0 auto;">
-                <label style="font-weight: bold; font-size: 20px"><input type="checkbox" id="bold"> Bold</label>
-                <br>
-                <label style="font-style: italic; font-size: 20px"><input type="checkbox" id="italic"> Italic</label>
-                <br>
-                <label style="text-decoration: underline; font-size: 20px "><input type="checkbox" id="underline"> Underline</label>
-                <br>
+                <label style="font-weight: bold; font-size: 18px"><input type="checkbox" id="bold">Bold</label>
+                
+                <label style="font-style: italic; font-size: 18px"><input type="checkbox" id="italic">Italic</label>
+                
+                <label style="text-decoration: underline; font-size: 18px "><input type="checkbox" id="underline">Underline</label>
+                
             </div>
             <div class="hide">Click the Checkboxes to Change Font Style!</div>
             
