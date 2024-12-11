@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const switchCheckbox = document.querySelector('.switch-container input[type="checkbox"]');
 
     chrome.storage.sync.get('tooltipEnabled', () => {
-    switchCheckbox.checked = false; // Default to false if not set
+        switchCheckbox.checked = false; // Default to false if not set
     });
 
     // Update chrome.storage when checkbox state changes
     switchCheckbox.addEventListener('change', () => {
-    chrome.storage.sync.set({ tooltipEnabled: switchCheckbox.checked });
+        chrome.storage.sync.set({ tooltipEnabled: switchCheckbox.checked });
     });
 
     

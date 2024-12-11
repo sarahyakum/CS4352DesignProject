@@ -146,19 +146,19 @@ body {
     align-items: center;
     width: 100%; /* Make the container take up the full width */
     margin: 5px auto 0 auto;
-  }
+}
   
-  .checkbox-option {
+.checkbox-option {
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-grow: 1; /* Make each checkbox span grow to take up equal space */
-  }
+}
   
-  input[type="checkbox"] {
+input[type="checkbox"] {
     margin-right: 8px; /* Space between checkbox and label */
-  }
+}
 
 
 

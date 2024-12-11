@@ -83,11 +83,9 @@ function showTooltip(event, text) {
   });
 }
 
-
-// Tooltip functionality
 // Event listener for hover and tooltip display
 document.addEventListener("mouseover", (event) => {
-  //if (switchCheckbox.checked) return; 
+  
   const target = event.target;
   const items = target.id.split("-");
   chrome.storage.sync.get('tooltipEnabled', (data) => {
