@@ -323,14 +323,12 @@ document.getElementById("EditButton").addEventListener("click", function () {
             <label for="fontSize">Font Style:</label>
             <br>
             <br>
-            <div class="checkbox-container" style ="margin: 5px auto 0 auto;">
-                <label style="font-weight: bold; font-size: 18px"><input type="checkbox" id="bold">Bold</label>
-                
-                <label style="font-style: italic; font-size: 18px"><input type="checkbox" id="italic">Italic</label>
-                
-                <label style="text-decoration: underline; font-size: 18px "><input type="checkbox" id="underline">Underline</label>
-                
+            <div class="checkbox-container">
+                <span style="font-weight: bold;" class="checkbox-option"><input type="checkbox" id="bold">Bold</span>
+                <span style="font-style: italic;" class="checkbox-option"><input type="checkbox" id="italic">Italic</span>
+                <span style="text-decoration: underline;" class="checkbox-option"><input type="checkbox" id="underline">Underline</span>
             </div>
+
             <br>
             <br>
             </div>
