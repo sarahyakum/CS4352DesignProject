@@ -2,11 +2,18 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .frame {
     display: none;
-    
+
 }
 
 /* Hides elements by default (to be toggled via JavaScript) */
@@ -32,7 +39,7 @@ body {
     max-width: 800px; /* Maximum width for the frame */
     margin: 20px auto; /* Center the frame with margin */
     padding: 20px; /* Padding inside the frame */
-    background-color: #fefaf6;  /* Light beige */
+    background-color: #FFFAE9;  /* Light beige */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
@@ -86,13 +93,13 @@ body {
 }
 
 /* Button Hover Effect */
-#helpChatButton:hover, #EditChatButton:hover,.OptionButton:hover {
+#helpChatButton:hover,#EditButton:hover, #EditChatButton:hover,.OptionButton:hover {
     background-color: #ce7127; /* Darker shade on hover */
     transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
 /* Button Active Effect */
-#helpChatButton:active, #EditChatButton:active,.OptionButton:active  {
+#helpChatButton:active,#EditButton:active, #EditChatButton:active,.OptionButton:active  {
     transform: scale(0.95); /* Shrink button when clicked for effect */
 }
 
@@ -114,16 +121,32 @@ body {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    background-color: #fefaf6;  /* Light beige */
+    background-color: #FFFAE9;
     position: relative;
-    margin: 20px auto ;
+    margin: 25px auto ;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.chat-header {
-    background-color: #fefaf6;
+.settings-container {
+    background-color: rgba(249, 174, 94, 0.35);
     color: black;
-    padding: 10px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px;
+    position: relative;
+    font-size: 23px;
+    margin: 10px ;
+}
+
+
+
+.chat-header {
+    background-color: #FFFAE9;
+    color: black;
+    padding: 15px;
     text-align: center;
     font-weight: bold;
     border-bottom: 1px solid #f4a261;
@@ -133,16 +156,16 @@ body {
     border-top-right-radius: 10px;
 }
 .edit-header {
-    background-color: #fefaf6;
+    background-color: #FFFAE9;
+    padding-top: 25px;
     color: black;
-    padding: 10px;
     text-align: center;
     font-weight: bold;
-    border-bottom: 1px solid #f4a261;
     position: relative;
     font-size: 23px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    margin: 10px ;
 }
 
 .chat-messages {
@@ -252,7 +275,7 @@ body {
     position: absolute;            /* Absolutely position it within the frame */
     top: 10px;                     /* Distance from the top */
     left: 10px;                    /* Distance from the left */
-    font-size: 16px;               /* Font size for the back text */
+    font-size: 26px;               /* Font size for the back text */
     cursor: pointer;               /* Change cursor to pointer */
     color: #000;                   /* Set the color of the text */
     background-color: transparent; /* Make the background transparent */
@@ -266,21 +289,23 @@ body {
 
 /* Back button */
 #backButton {
-    align-self: flex-start;
-    background-color: transparent;
-    border: none;
-    color: #4a3f35;
-    font-size: 1em;
-    cursor: pointer;
-    margin-bottom: 10px;
-    font-weight: bold;
+    position: absolute;            /* Absolutely position it within the frame */
+    top: 10px;                     /* Distance from the top */
+    left: 10px;                    /* Distance from the left */
+    font-size: 40px;               /* Font size for the back text */
+    cursor: pointer;               /* Change cursor to pointer */
+    color: #000;                   /* Set the color of the text */
+    background-color: transparent; /* Make the background transparent */
+    border: none;                  /* Remove default border */
+    padding: 5px;
+    font-weight: 500;                  /* Add some padding around the button */
 }
 
 #editBackButton {
     position: absolute;            /* Absolutely position it within the frame */
     top: 10px;                     /* Distance from the top */
     left: 10px;                    /* Distance from the left */
-    font-size: 23px;               /* Font size for the back text */
+    font-size: 40px;               /* Font size for the back text */
     cursor: pointer;               /* Change cursor to pointer */
     color: #000;                   /* Set the color of the text */
     background-color: transparent; /* Make the background transparent */
@@ -350,7 +375,7 @@ label {
     display: flex;
     align-items: center;
     width: 90%;
-    font-weight: 25px;
+    font-size: 25px;
 }
 
 .slider-label {
@@ -374,9 +399,9 @@ label {
     appearance: none;
     width: 100%; /* Full-width */
     height: 15px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
+    background-color: white;
     outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    opacity: 1; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
 }
@@ -428,6 +453,11 @@ label {
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
     margin: 10px auto 0 auto;
+    width: 80%;
+}
+
+#resetBtn{
+    background-color: #ef720c; /* Soft pink color for a cute look */
 }
 
 /* Button Hover Effect */
@@ -440,7 +470,7 @@ label {
     display: none;
 }
 
-.checkbox-container:hover + .hide, .slider-container:hover + .hide, #fontType:hover + .hide, #resetBtn:hover + .hide, #applyBtn:hover + .hide  {
+.description  {
     display: block;
     color: #ce7127;
     text-align: center;
@@ -549,3 +579,8 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+
+
+
+
