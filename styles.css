@@ -454,6 +454,7 @@ label {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
     margin: 10px auto 0 auto;
     width: 80%;
+    
 }
 
 #resetBtn{
@@ -484,20 +485,41 @@ label {
         padding: 15px;
     }
 }
-
 .custom-tooltip {
-  position: absolute;
-  background-color: #f4a261;
-  color: #fff;
-  padding: 8px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  font-size: 28px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 1000;
-}
+    position: absolute;
+    background-color: #f4a261;
+    color: #fff;
+    padding: 12px 16px; /* Larger padding for emphasis */
+    border-radius: 12px; /* Slightly larger border radius for a smoother look */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow for depth */
+    font-size: 24px; /* Adjust font size to make it visually striking */
+    font-weight: bold; /* Bold text for better readability */
+    display: flex;
+    align-items: center;
+    gap: 12px; /* More space between elements */
+    z-index: 1000;
+    animation: popIn 0.3s ease-out; /* Add a pop-in animation */
+    transform: scale(1); /* Ensures no scaling issues */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* Subtle hover scaling effect */
+  }
+  
+  .custom-tooltip:hover {
+    transform: scale(1.05); /* Slight scaling effect on hover */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+  }
+  
+  /* Animation for pop-in effect */
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
 
 .custom-tooltip .close-tooltip {
   background: transparent;
