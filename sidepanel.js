@@ -20,16 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const switchCheckbox = document.querySelector('.switch-container input[type="checkbox"]');
-    
-    // Set initial checkbox state from chrome.storage
-    chrome.storage.sync.get('tooltipEnabled', (data) => {
-        switchCheckbox.checked = false;
+
+    chrome.storage.sync.get('tooltipEnabled', () => {
+    switchCheckbox.checked = false; // Default to false if not set
     });
 
     // Update chrome.storage when checkbox state changes
     switchCheckbox.addEventListener('change', () => {
-        chrome.storage.sync.set({ tooltipEnabled: switchCheckbox.checked });
+    chrome.storage.sync.set({ tooltipEnabled: switchCheckbox.checked });
     });
+
+    
 });
 
 document.getElementById("helpChatButton").addEventListener("click", function () {
@@ -422,3 +423,18 @@ document.getElementById("EditButton").addEventListener("click", function () {
       }
 
 });
+
+
+/*
+const switchCheckbox = document.querySelector('.switch-container input[type="checkbox"]');
+    
+    // Set initial checkbox state from chrome.storage
+    chrome.storage.sync.get('tooltipEnabled', () => {
+        switchCheckbox.checked = false;
+    });
+
+    // Update chrome.storage when checkbox state changes
+    switchCheckbox.addEventListener('change', () => {
+        chrome.storage.sync.set({ tooltipEnabled: switchCheckbox.checked });
+    });
+    */
