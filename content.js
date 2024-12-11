@@ -28,7 +28,10 @@ const tooltipDictionary = {
   "quick-links-container": "Immediate help",
   "btn-tertiary": "Click Here",
   "gtranslate_selector": "Pick your language",
-  "popular-service": "Select a Service"
+  "popular-service": "Select a Service",
+  "search-bar": "Enter Search Here",
+  "carousel-container": "Scroll to see more",
+  "fulfillment-banner": "Set your location"
 
 };
 
@@ -86,7 +89,7 @@ document.addEventListener("mouseover", (event) => {
     if (!data.tooltipEnabled) return;
     
     for (const key in tooltipDictionary) {
-      if (target.classList.contains(key) || target.id === key) {
+      if (target.classList.contains(key) || target.id === key ) {
         showTooltip(event, tooltipDictionary[key]);
         break;
       }
