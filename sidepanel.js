@@ -39,7 +39,7 @@ document.getElementById("helpChatButton").addEventListener("click", function () 
     chatContainer.innerHTML = `
         <div class="chat-container">
             <div class="chat-header">Help Chat</div> 
-            <button id="backButton"> Back</button>
+            <button id="backButton"> &larr; </button> 
             <div class="chat-messages" id="chatMessages"></div>
             <div class="suggestion-box" id="suggestionBox"></div>
             <div class="chat-input-container">
@@ -276,8 +276,13 @@ document.getElementById("EditButton").addEventListener("click", function () {
     // Add HTML code inside the editContainer
     editContainer.innerHTML = `
         <div class="edit-container">
-            <div class="edit-header">Text Editor</div>
+            <div class="edit-header">Text Editor
+            <br>
             <button id="editBackButton"> &larr; </button> 
+            </div>
+       
+            <div class="settings-container"> 
+            <br>
             <label for="fontType">Font Type:</label>
             <select id="fontType">
                 <option value="" style="font-family:sans-serif;">Original Font</option>
@@ -295,21 +300,29 @@ document.getElementById("EditButton").addEventListener("click", function () {
                 <option value="Lucida Console" style="font-family:'Lucida Console', monospace;">Lucida Console</option>
                 <option value="Consolas" style="font-family:Consolas, monospace;">Consolas</option>
             </select>
-            <div class="hide">Click to Change Font Type!</div>
+            <br>
+            <br>
+            </div>
+            
+            <div class="settings-container"> 
             <br>
             <label for="fontSize">Font Size:</label>
             <br>
-            
             <div class="slider-container" style =" margin: 10px auto 0 auto;">
-                <span id="slider" style="font-size: 8px">Aa</span> 
+                <span id="slider" style="font-size: 15px">Aa&nbsp;&nbsp;</span> 
                 <input id="fontSize" class="font-size-slider" type="range" min="8" max="24" value="16" step="1">
-                 <span id="slider" style="font-size: 24px">Aa</span>
+                 <span id="slider" style="font-size: 25px; font-weight: bold ">&nbsp;&nbsp;Aa</span>
+            </div>
+            <br>
             </div>
             
-            <div class="hide">Slide the Cursor to Adjust Font Size!</div>
+            
+            <div class="settings-container"> 
             <br>
             <label for="fontSize">Font Style:</label>
-            <div class="checkbox-container" style ="margin: 10px auto 0 auto;">
+            <br>
+            <br>
+            <div class="checkbox-container" style ="margin: 5px auto 0 auto;">
                 <label style="font-weight: bold; font-size: 18px"><input type="checkbox" id="bold">Bold</label>
                 
                 <label style="font-style: italic; font-size: 18px"><input type="checkbox" id="italic">Italic</label>
@@ -317,14 +330,14 @@ document.getElementById("EditButton").addEventListener("click", function () {
                 <label style="text-decoration: underline; font-size: 18px "><input type="checkbox" id="underline">Underline</label>
                 
             </div>
-            <div class="hide">Click the Checkboxes to Change Font Style!</div>
+            <br>
+            <br>
+            </div>
             
             
             <br>
             <button id="applyBtn">Apply Settings</button>
-            <div class="hide">Click to Save Your Changes</div>
-            <button id="resetBtn">Reset</button>
-            <div class="hide">Click to Reset to Original Settings</div>
+            <button id="resetBtn">Undo Settings</button>
             
         </div>
         
