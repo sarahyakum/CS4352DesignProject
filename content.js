@@ -30,8 +30,9 @@ const tooltipDictionary = {
   "gtranslate_selector": "Pick your language",
   "popular-service": "Select a Service",
   "search-bar": "Enter Search Here",
-  "carousel-container": "Scroll to see more",
-  "fulfillment-banner": "Set your location"
+  "AdjustableCardCarousel": "Scroll to see more",
+  "intent-banner-section": "Set your location",
+  "Shopnow": "Click to shop"
 
 };
 
@@ -85,14 +86,16 @@ function showTooltip(event, text) {
 // Event listener for hover and tooltip display
 document.addEventListener("mouseover", (event) => {
   const target = event.target;
+  const items = target.id.split("-");
   chrome.storage.sync.get('tooltipEnabled', (data) => {
     if (!data.tooltipEnabled) return;
     
     for (const key in tooltipDictionary) {
-      if (target.classList.contains(key) || target.id === key ) {
+      if (target.classList.contains(key) || target.id === key || items.includes(key)  ) {
         showTooltip(event, tooltipDictionary[key]);
         break;
       }
+      
     }
   })
 });
